@@ -2,7 +2,7 @@ name: Learn GitHub Actions
 run-name: ${{ github.actor }} is learning GitHub Actions
 on: [push]
 jobs:
-  check-bats-version:
+  clean-and-build-project:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
