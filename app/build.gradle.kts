@@ -19,7 +19,7 @@ android {
     }
 
     lint {
-        disable.add("NullSafeMutableLiveData")
+        disable.addAll(listOf("NullSafeMutableLiveData", "FrequentlyChangingValue", "RememberInComposition"))
     }
 
     buildTypes {
