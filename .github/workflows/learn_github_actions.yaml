@@ -1,0 +1,20 @@
+name: Learn GitHub Actions
+run-name: ${{ github.actor }} is learning GitHub Actions
+on: [push]
+jobs:
+  check-bats-version:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v5
+      - name: Set up JDK 21
+        uses: actions/setup-java@v5
+        with:
+          distribution: 'zulu'
+          java-version: '21'
+      - name: Grant Execute Permission for Gradlew
+        run: chmod +x gradlew
+      - name: Clean Project
+        run: ./gradlew clean
+      - name: Build Project
+        run: ./gradlew build
