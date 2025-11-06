@@ -1,0 +1,13 @@
+name: Kotlin Lint Check
+run-name: ${{github.actor}} is running lint check
+on: push
+jobs:
+  Run-Lint-Check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v5
+
+      - name: Run Lint
+        uses: super-linter/super-linter@v8.2.1
